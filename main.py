@@ -13,7 +13,9 @@ def main():
         (1) Összeadás
         (2) Kivonás
         (3) Szorzás
-        (4) Osztás     
+        (4) Osztás 
+        (5) Négyzetre emelés
+        (6) Négyzet gyökvonás    
               
               """)
 
@@ -47,7 +49,19 @@ def main():
             input_1 = int(input("\nMennyit szeretnél osztani: "))
             input_2 = int(input("\nMenyivel: "))
             eredmeny = input_1 / input_2  
-            print(f"\n Az szamolás eredménye: {eredmeny}")                              
+            print(f"\n Az szamolás eredménye: {eredmeny}")   
+
+        elif user_choise == "5":
+            input_1 = int(input("\nMennyit szeretnél négyzetre emelni: "))
+            eredmeny = input_1 ** input_1  
+            print(f"\n Az szamolás eredménye: {eredmeny}") 
+
+
+        elif user_choise == "6":
+            input_1 = int(input("\nMennyit szeretnél osztani: "))
+            input_2 = int(input("\nMenyivel: "))
+            eredmeny = input_1 ** 0,5  
+            print(f"\n Az szamolás eredménye: {eredmeny}")                            
 
         else:
             print("\nIlyer érték nincs felsorolva")  
