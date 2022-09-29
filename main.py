@@ -1,10 +1,25 @@
 import time
+import colorama
 
 def main():
+
+    def kilepes():
+        print("\nA rendszer 3 másotperc múlva bezárja magát")
+        time.sleep(3)
+        exit()
+
     
     def choice():
+
         print("""
-              
+   ____        _  _               _         _                  _                ____                    _  
+  / ___| __ _ | || |  ___  _   _ | |  __ _ | |_  ___   _ __   | |__   _   _  _ | __ )   __ _  ____ ___ (_) 
+ | |    / _` || || | / __|| | | || | / _` || __|/ _ \ | '__|  | '_ \ | | | |(_)|  _ \  / _` ||_  // __|| | 
+ | |___| (_| || || || (__ | |_| || || (_| || |_| (_) || |     | |_) || |_| | _ | |_) || (_| | / / \__ \| | 
+  \____|\__,_||_||_| \___| \__,_||_| \__,_| \__|\___/ |_|     |_.__/  \__, |(_)|____/  \__,_|/___||___/|_| 
+                                                                      |___/                                """)
+
+        print("""
     Ez egy számológép alkalmazás:
 
     Válaszd ki a neked kellő művelet számat.
@@ -15,7 +30,9 @@ def main():
         (3) Szorzás
         (4) Osztás 
         (5) Négyzetre emelés
-        (6) Négyzet gyökvonás    
+        (6) Négyzet gyökvonás
+        (7) Kerület
+        (8) Terület 
               
               """)
 
@@ -23,9 +40,7 @@ def main():
         user_choise = input("Választásod? ")  
 
         if user_choise == "0":
-            print("\nA rendszer 3 másotperc múlva bezárja magát")
-            time.sleep(3)
-            quit()
+            kilepes()
 
         elif user_choise == "1":
             input_1 = int(input("\nMennyit szeretnél összeadni: "))
@@ -71,12 +86,10 @@ def main():
         user_continue = input("\nSzeretnéd folytatni? ( igen / nem ) ")
 
         if user_continue == "igen":
-            main()
+            kilepes()
 
         elif user_continue == "nem":            
-            print("\nA rendszer 3 másotperc múlva bezárja magát.")
-            time.sleep(3)
-            quit()
+            kilepes()
 
         else:
             print("\nIlyen érték nincs megadva.")
