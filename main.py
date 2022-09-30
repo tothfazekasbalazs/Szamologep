@@ -1,5 +1,6 @@
 import time
 import colorama
+from colorama import Fore, Back, Style
 
 def main():
 
@@ -8,49 +9,103 @@ def main():
         time.sleep(3)
         exit()
 
+    def converting_input_1():
+
+        try:
+            global input_1
+            input_1 = int(input_1)
+
+        except:
+            print(Fore.RED +"\nEzzel az adattal nem lehez számolni!!")
+            repait()
+
+    def converting_input_2():
+
+        try:
+            global input_2
+            input_2 = int(input_2)
+
+        except:
+            print(Fore.RED +"\nEzzel az adattal nem lehez számolni!!")
+            repait()
+
     def addition():
-        input_1 = int(input("\nMennyit szeretnél összeadni: "))
-        input_2 = int(input("\nMenyit szertnél hozzáadni: "))
+        global input_1
+        input_1 = input("\nMennyit szeretnél összeadni: ")
+        converting_input_1()
+        global input_2
+        input_2 = input("\nMenyit szertnél hozzáadni: ")
+        converting_input_2()
         eredmeny = input_1 + input_2  
         print(f"\n Az szamolás eredménye: {eredmeny}") 
 
     def subtraction():
-        input_1 = int(input("\nMennnyiből szeretnél kivonni: "))
-        input_2 = int(input("\nMennyit?: "))
+        global input_1
+        input_1 = input("\nMennnyiből szeretnél kivonni: ")
+        converting_input_1()
+        global input_2
+        input_2 = input("\nMennyit?: ")
+        converting_input_2()
         eredmeny = input_1 - input_2  
         print(f"\n Az szamolás eredménye: {eredmeny}")
 
     def multiplication():
-        input_1 = int(input("\nMennyit szeretnél összeszorozni: "))
-        input_2 = int(input("\nMenyivel: "))
+        global input_1
+        input_1 = input("\nMennyit szeretnél összeszorozni: ")
+        converting_input_1()
+        global input_2
+        input_2 = input("\nMenyivel: ")
+        converting_input_2()
         eredmeny = input_1 * input_2  
         print(f"\n Az szamolás eredménye: {eredmeny}")
 
     def division():
-        input_1 = int(input("\nMennyit szeretnél osztani: "))
-        input_2 = int(input("\nMenyivel: "))
+        global input_1
+        input_1 = input("\nMennyit szeretnél osztani: ")
+        converting_input_1()
+        global input_2
+        input_2 = input("\nMenyivel: ")
+        converting_input_2()
         eredmeny = input_1 / input_2  
         print(f"\n Az szamolás eredménye: {eredmeny}")
     
     def exponentiation():
-        input_1 = int(input("\nMennyit szeretnél négyzetre emelni: "))
+        global input_1
+        input_1 = input("\nMennyit szeretnél négyzetre emelni: ")
+        converting_input_1()
         eredmeny = input_1 ** input_1  
         print(f"\n Az szamolás eredménye: {eredmeny}")
 
     def root_subtraction():
-        input_1 = int(input("\nMennyit szeretnél osztani: "))
-        input_2 = int(input("\nMenyivel: "))
+        global input_1
+        input_1 = int(input("\nMennyit szeretnél a négyzetgyökét: "))
         eredmeny = input_1 ** 0,5  
         print(f"\n Az szamolás eredménye: {eredmeny}")
 
     def district():       
         input_1 = int(input("\nMilyen alakzatnak szeretnéd a kerületét: (kör, négyzet, téglalap, háromszög) "))
 
+        if input_1 == "kör":
+            kor_input = int(input(""))
+
+        elif input_1 == "négyzet" or "Négyzet":
+            negyzet_input = int(input(""))
+
+        elif input_1 == "téglalap" or "Téglalap":
+            teglalap_input = int(input(""))
+
+        elif input_1 == "haromszög" or "Háromszög":
+            haromszög_input = int(input(""))
+
+        else:
+            print(f"\n Ilyen érték nincs megadva")
+            district()
+
     def root_subtraction():
         input_1 = int(input("\nMilyen alakzatnak szeretnéd a területét: (kör, négyzet, téglalap, háromszög)"))
 
     def repait():
-        user_continue = input("\nSzeretnéd folytatni? ( igen / nem ) ")
+        user_continue = input(Fore.WHITE +"\nSzeretnéd továbbra is számolni? ( igen / nem ) ")
 
         if user_continue == "igen":
             choice()
@@ -62,8 +117,8 @@ def main():
             print("\nIlyen érték nincs megadva.")
             repait()
  
-
-    print("""
+    def big_text():
+        print("""
    ____        _  _               _         _                  _                ____                    _  
   / ___| __ _ | || |  ___  _   _ | |  __ _ | |_  ___   _ __   | |__   _   _  _ | __ )   __ _  ____ ___ (_) 
  | |    / _` || || | / __|| | | || | / _` || __|/ _ \ | '__|  | '_ \ | | | |(_)|  _ \  / _` ||_  // __|| | 
@@ -124,6 +179,7 @@ def main():
             print("\nIlyer érték nincs felsorolva")  
             choice()
 
+    big_text()
     choice()
     repait()
 
