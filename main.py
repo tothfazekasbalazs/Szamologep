@@ -32,16 +32,35 @@ def main():
         eredmeny = input_1 / input_2  
         print(f"\n Az szamolás eredménye: {eredmeny}")
     
-    def district():
+    def exponentiation():
         input_1 = int(input("\nMennyit szeretnél négyzetre emelni: "))
         eredmeny = input_1 ** input_1  
         print(f"\n Az szamolás eredménye: {eredmeny}")
 
-    def terrian():
+    def root_subtraction():
         input_1 = int(input("\nMennyit szeretnél osztani: "))
         input_2 = int(input("\nMenyivel: "))
         eredmeny = input_1 ** 0,5  
         print(f"\n Az szamolás eredménye: {eredmeny}")
+
+    def district():       
+        input_1 = int(input("\nMilyen alakzatnak szeretnéd a kerületét: (kör, négyzet, téglalap, háromszög) "))
+
+    def root_subtraction():
+        input_1 = int(input("\nMilyen alakzatnak szeretnéd a területét: (kör, négyzet, téglalap, háromszög)"))
+
+    def repait():
+        user_continue = input("\nSzeretnéd folytatni? ( igen / nem ) ")
+
+        if user_continue == "igen":
+            choice()
+
+        elif user_continue == "nem":            
+            kilepes()
+
+        else:
+            print("\nIlyen érték nincs megadva.")
+            repait()
  
 
     print("""
@@ -75,41 +94,35 @@ def main():
 
         if user_choise == "0":
             kilepes()
+            repait()
 
         elif user_choise == "1":
             addition()
+            repait()
 
         elif user_choise == "2":
             subtraction()
+            repait()
 
         elif user_choise == "3":
             multiplication()
+            repait()
 
         elif user_choise == "4":
             division()
+            repait()
    
         elif user_choise == "5":
-            district()
+            exponentiation()
+            repait()
 
         elif user_choise == "6":
-            terrian()                            
+            root_subtraction()
+            repait()                            
 
         else:
             print("\nIlyer érték nincs felsorolva")  
             choice()
-
-    def repait():
-        user_continue = input("\nSzeretnéd folytatni? ( igen / nem ) ")
-
-        if user_continue == "igen":
-            choice()
-
-        elif user_continue == "nem":            
-            kilepes()
-
-        else:
-            print("\nIlyen érték nincs megadva.")
-            repait()
 
     choice()
     repait()
