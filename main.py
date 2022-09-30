@@ -29,6 +29,8 @@ def main():
             print(Fore.RED +"\nEzzel az adattal nem lehez számolni!!")
             repait()
 
+    #Összeadás
+
     def addition():
         global input_1
         input_1 = input("\nMennyit szeretnél összeadni: ")
@@ -38,6 +40,8 @@ def main():
         converting_input_2()
         eredmeny = input_1 + input_2  
         print(f"\n Az szamolás eredménye: {eredmeny}") 
+
+    #Kivonás
 
     def subtraction():
         global input_1
@@ -49,6 +53,8 @@ def main():
         eredmeny = input_1 - input_2  
         print(f"\n Az szamolás eredménye: {eredmeny}")
 
+    #Szorzás
+
     def multiplication():
         global input_1
         input_1 = input("\nMennyit szeretnél összeszorozni: ")
@@ -59,6 +65,8 @@ def main():
         eredmeny = input_1 * input_2  
         print(f"\n Az szamolás eredménye: {eredmeny}")
 
+    #Osztás
+
     def division():
         global input_1
         input_1 = input("\nMennyit szeretnél osztani: ")
@@ -68,6 +76,8 @@ def main():
         converting_input_2()
         eredmeny = input_1 / input_2  
         print(f"\n Az szamolás eredménye: {eredmeny}")
+
+    #Hatványozás
     
     def exponentiation():
         global input_1
@@ -76,16 +86,21 @@ def main():
         eredmeny = input_1 ** input_1  
         print(f"\n Az szamolás eredménye: {eredmeny}")
 
+    #Gyökvonás
+
     def root_subtraction():
         global input_1
-        input_1 = int(input("\nMennyit szeretnél a négyzetgyökét: "))
-        eredmeny = input_1 ** 0,5  
+        input_1 = input("\nMennyit szeretnél a négyzetgyökét: ")
+        converting_input_1()
+        eredmeny = input_1 ** 0.5  
         print(f"\n Az szamolás eredménye: {eredmeny}")
+
+    #Kerület
 
     def district():       
         input_1 = int(input("\nMilyen alakzatnak szeretnéd a kerületét: (kör, négyzet, téglalap, háromszög) "))
 
-        if input_1 == "kör":
+        if input_1 == "kör" or "Kör":
             kor_input = int(input(""))
 
         elif input_1 == "négyzet" or "Négyzet":
@@ -101,7 +116,9 @@ def main():
             print(f"\n Ilyen érték nincs megadva")
             district()
 
-    def root_subtraction():
+    #Terület
+
+    def region():
         input_1 = int(input("\nMilyen alakzatnak szeretnéd a területét: (kör, négyzet, téglalap, háromszög)"))
 
     def repait():
@@ -173,7 +190,15 @@ def main():
 
         elif user_choise == "6":
             root_subtraction()
-            repait()                            
+            repait() 
+
+        elif user_choise == "7":
+            district() 
+            repait()
+
+        elif user_choise == "8":
+            region()
+            repait()                          
 
         else:
             print("\nIlyer érték nincs felsorolva")  
