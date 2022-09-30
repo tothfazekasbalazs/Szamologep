@@ -14,7 +14,7 @@ def main():
         exit()
 
     def converting_input_1():
-        
+
         try:
             global input_1
             input_1 = int(input_1)
@@ -43,7 +43,7 @@ def main():
         input_2 = input("\nMenyit szertnél hozzáadni: ")
         converting_input_2()
         eredmeny = input_1 + input_2  
-        print(f"\n Az szamolás eredménye: {eredmeny}") 
+        print(f"{Fore.GREEN}\n Az szamolás eredménye: {eredmeny}{Style.RESET_ALL}") 
 
     #Kivonás
 
@@ -55,7 +55,7 @@ def main():
         input_2 = input("\nMennyit?: ")
         converting_input_2()
         eredmeny = input_1 - input_2  
-        print(f"\n Az szamolás eredménye: {eredmeny}")
+        print(f"\n{Fore.GREEN} Az szamolás eredménye: {eredmeny}{Style.RESET_ALL}")
 
     #Szorzás
 
@@ -67,7 +67,7 @@ def main():
         input_2 = input("\nMenyivel: ")
         converting_input_2()
         eredmeny = input_1 * input_2  
-        print(f"\n Az szamolás eredménye: {eredmeny}")
+        print(f"\n{Fore.GREEN} Az szamolás eredménye: {eredmeny}{Style.RESET_ALL}")
 
     #Osztás
 
@@ -79,7 +79,7 @@ def main():
         input_2 = input("\nMenyivel: ")
         converting_input_2()
         eredmeny = input_1 / input_2  
-        print(f"\n Az szamolás eredménye: {eredmeny}")
+        print(f"\n{Fore.GREEN} Az szamolás eredménye: {eredmeny}{Style.RESET_ALL}")
 
     #Hatványozás
     
@@ -88,7 +88,7 @@ def main():
         input_1 = input("\nMennyit szeretnél négyzetre emelni: ")
         converting_input_1()
         eredmeny = input_1 ** input_1  
-        print(f"\n Az szamolás eredménye: {eredmeny}")
+        print(f"\n{Fore.GREEN} Az szamolás eredménye: {eredmeny}{Style.RESET_ALL}")
 
     #Gyökvonás
 
@@ -97,7 +97,7 @@ def main():
         input_1 = input("\nMennyit szeretnél a négyzetgyökét: ")
         converting_input_1()
         eredmeny = input_1 ** 0.5  
-        print(f"\n Az szamolás eredménye: {eredmeny}")
+        print(f"\n{Fore.GREEN} Az szamolás eredménye: {eredmeny}{Style.RESET_ALL}")
 
     #Kerület
 
