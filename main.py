@@ -1,6 +1,10 @@
 import time
 import colorama
 from colorama import Fore, Back, Style
+from colorama import init
+from termcolor import colored, cprint
+
+init()
 
 def main():
 
@@ -10,13 +14,13 @@ def main():
         exit()
 
     def converting_input_1():
-
+        
         try:
             global input_1
             input_1 = int(input_1)
 
         except:
-            print(Fore.RED +"\nEzzel az adattal nem lehez számolni!!")
+            print(f"\n{Fore.RED}Ezzel az adattal nem lehez számolni!!{Style.RESET_ALL}")
             repait()
 
     def converting_input_2():
@@ -26,7 +30,7 @@ def main():
             input_2 = int(input_2)
 
         except:
-            print(Fore.RED +"\nEzzel az adattal nem lehez számolni!!")
+            print(f"\n{Fore.RED}Ezzel az adattal nem lehez számolni!!{Style.RESET_ALL}")
             repait()
 
     #Összeadás
@@ -122,7 +126,7 @@ def main():
         input_1 = int(input("\nMilyen alakzatnak szeretnéd a területét: (kör, négyzet, téglalap, háromszög)"))
 
     def repait():
-        user_continue = input(Fore.WHITE +"\nSzeretnéd továbbra is számolni? ( igen / nem ) ")
+        user_continue = input("\nSzeretnéd továbbra is számolni? ( igen / nem ) ")
 
         if user_continue == "igen":
             choice()
@@ -135,14 +139,14 @@ def main():
             repait()
  
     def big_text():
-        print("""
+        print(f"""{Fore.YELLOW}
    ____        _  _               _         _                  _                ____                    _  
   / ___| __ _ | || |  ___  _   _ | |  __ _ | |_  ___   _ __   | |__   _   _  _ | __ )   __ _  ____ ___ (_) 
  | |    / _` || || | / __|| | | || | / _` || __|/ _ \ | '__|  | '_ \ | | | |(_)|  _ \  / _` ||_  // __|| | 
  | |___| (_| || || || (__ | |_| || || (_| || |_| (_) || |     | |_) || |_| | _ | |_) || (_| | / / \__ \| | 
   \____|\__,_||_||_| \___| \__,_||_| \__,_| \__|\___/ |_|     |_.__/  \__, |(_)|____/  \__,_|/___||___/|_| 
                                                                       |___/                                                                                                     
-    Ez egy számológép alkalmazás:""")
+    {Style.RESET_ALL}Ez egy számológép alkalmazás:""")
 
     def choice():
 
