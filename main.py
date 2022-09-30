@@ -8,20 +8,54 @@ def main():
         time.sleep(3)
         exit()
 
-    
-    def choice():
+    def addition():
+        input_1 = int(input("\nMennyit szeretnél összeadni: "))
+        input_2 = int(input("\nMenyit szertnél hozzáadni: "))
+        eredmeny = input_1 + input_2  
+        print(f"\n Az szamolás eredménye: {eredmeny}") 
 
-        print("""
+    def subtraction():
+        input_1 = int(input("\nMennnyiből szeretnél kivonni: "))
+        input_2 = int(input("\nMennyit?: "))
+        eredmeny = input_1 - input_2  
+        print(f"\n Az szamolás eredménye: {eredmeny}")
+
+    def multiplication():
+        input_1 = int(input("\nMennyit szeretnél összeszorozni: "))
+        input_2 = int(input("\nMenyivel: "))
+        eredmeny = input_1 * input_2  
+        print(f"\n Az szamolás eredménye: {eredmeny}")
+
+    def division():
+        input_1 = int(input("\nMennyit szeretnél osztani: "))
+        input_2 = int(input("\nMenyivel: "))
+        eredmeny = input_1 / input_2  
+        print(f"\n Az szamolás eredménye: {eredmeny}")
+    
+    def district():
+        input_1 = int(input("\nMennyit szeretnél négyzetre emelni: "))
+        eredmeny = input_1 ** input_1  
+        print(f"\n Az szamolás eredménye: {eredmeny}")
+
+    def terrian():
+        input_1 = int(input("\nMennyit szeretnél osztani: "))
+        input_2 = int(input("\nMenyivel: "))
+        eredmeny = input_1 ** 0,5  
+        print(f"\n Az szamolás eredménye: {eredmeny}")
+ 
+
+    print("""
    ____        _  _               _         _                  _                ____                    _  
   / ___| __ _ | || |  ___  _   _ | |  __ _ | |_  ___   _ __   | |__   _   _  _ | __ )   __ _  ____ ___ (_) 
  | |    / _` || || | / __|| | | || | / _` || __|/ _ \ | '__|  | '_ \ | | | |(_)|  _ \  / _` ||_  // __|| | 
  | |___| (_| || || || (__ | |_| || || (_| || |_| (_) || |     | |_) || |_| | _ | |_) || (_| | / / \__ \| | 
   \____|\__,_||_||_| \___| \__,_||_| \__,_| \__|\___/ |_|     |_.__/  \__, |(_)|____/  \__,_|/___||___/|_| 
-                                                                      |___/                                """)
+                                                                      |___/                                                                                                     
+    Ez egy számológép alkalmazás:""")
+
+    def choice():
 
         print("""
-    Ez egy számológép alkalmazás:
-
     Válaszd ki a neked kellő művelet számat.
         
         (0) Kilépés
@@ -43,40 +77,22 @@ def main():
             kilepes()
 
         elif user_choise == "1":
-            input_1 = int(input("\nMennyit szeretnél összeadni: "))
-            input_2 = int(input("\nMenyit szertnél hozzáadni: "))
-            eredmeny = input_1 + input_2  
-            print(f"\n Az szamolás eredménye: {eredmeny}") 
+            addition()
 
         elif user_choise == "2":
-            input_1 = int(input("\nMennnyiből szeretnél kivonni: "))
-            input_2 = int(input("\nMennyit?: "))
-            eredmeny = input_1 - input_2  
-            print(f"\n Az szamolás eredménye: {eredmeny}") 
+            subtraction()
 
         elif user_choise == "3":
-            input_1 = int(input("\nMennyit szeretnél összeszorozni: "))
-            input_2 = int(input("\nMenyivel: "))
-            eredmeny = input_1 * input_2  
-            print(f"\n Az szamolás eredménye: {eredmeny}") 
+            multiplication()
 
         elif user_choise == "4":
-            input_1 = int(input("\nMennyit szeretnél osztani: "))
-            input_2 = int(input("\nMenyivel: "))
-            eredmeny = input_1 / input_2  
-            print(f"\n Az szamolás eredménye: {eredmeny}")   
-
+            division()
+   
         elif user_choise == "5":
-            input_1 = int(input("\nMennyit szeretnél négyzetre emelni: "))
-            eredmeny = input_1 ** input_1  
-            print(f"\n Az szamolás eredménye: {eredmeny}") 
-
+            district()
 
         elif user_choise == "6":
-            input_1 = int(input("\nMennyit szeretnél osztani: "))
-            input_2 = int(input("\nMenyivel: "))
-            eredmeny = input_1 ** 0,5  
-            print(f"\n Az szamolás eredménye: {eredmeny}")                            
+            terrian()                            
 
         else:
             print("\nIlyer érték nincs felsorolva")  
@@ -86,7 +102,7 @@ def main():
         user_continue = input("\nSzeretnéd folytatni? ( igen / nem ) ")
 
         if user_continue == "igen":
-            kilepes()
+            choice()
 
         elif user_continue == "nem":            
             kilepes()
