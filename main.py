@@ -20,7 +20,7 @@ def main():
             input_1 = int(input_1)
 
         except:
-            print(f"\n{Fore.RED}Ezzel az adattal nem lehez számolni!!{Style.RESET_ALL}")
+            print(f"\n{Fore.RED}Ezzel az adattal nem lehet számolni!!{Style.RESET_ALL}")
             repait()
 
     def converting_input_2():
@@ -30,7 +30,7 @@ def main():
             input_2 = int(input_2)
 
         except:
-            print(f"\n{Fore.RED}Ezzel az adattal nem lehez számolni!!{Style.RESET_ALL}")
+            print(f"\n{Fore.RED}Ezzel az adattal nem lehet számolni!!{Style.RESET_ALL}")
             repait()
 
     #Összeadás
@@ -128,10 +128,10 @@ def main():
     def repait():
         user_continue = input("\nSzeretnéd továbbra is számolni? ( igen / nem ) ")
 
-        if user_continue == "igen":
+        if user_continue == "i" or "igen":
             choice()
 
-        elif user_continue == "nem":            
+        elif user_continue == "n" or "nem":            
             kilepes()
 
         else:
@@ -170,7 +170,6 @@ def main():
 
         if user_choise == "0":
             kilepes()
-            repait()
 
         elif user_choise == "1":
             addition()
