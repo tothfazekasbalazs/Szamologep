@@ -8,10 +8,15 @@ init()
 
 def main():
 
+    #Kilepés fügvény
+
     def kilepes():
         print("\nA rendszer 3 másotperc múlva bezárja magát")
         time.sleep(3)
         exit()
+
+    #Kilepés fügvény vége
+    #Karakterek convertálása inté ha nem teljesül be akkor a program bezárja magát (1)
 
     def converting_input_1():
 
@@ -33,6 +38,7 @@ def main():
             print(f"\n{Fore.RED}Ezzel az adattal nem lehet számolni!!{Style.RESET_ALL}")
             repait()
 
+    #Karakterek convertálása inté ha nem teljesül be akkor a program bezárja magát vége
     #Összeadás
 
     def addition():
@@ -45,6 +51,7 @@ def main():
         eredmeny = input_1 + input_2  
         print(f"{Fore.GREEN}\n Az szamolás eredménye: {eredmeny}{Style.RESET_ALL}") 
 
+    #Összeadás vége
     #Kivonás
 
     def subtraction():
@@ -57,6 +64,7 @@ def main():
         eredmeny = input_1 - input_2  
         print(f"\n{Fore.GREEN} Az szamolás eredménye: {eredmeny}{Style.RESET_ALL}")
 
+    #Kivonás vége
     #Szorzás
 
     def multiplication():
@@ -69,6 +77,7 @@ def main():
         eredmeny = input_1 * input_2  
         print(f"\n{Fore.GREEN} Az szamolás eredménye: {eredmeny}{Style.RESET_ALL}")
 
+    #Szorzás vége
     #Osztás
 
     def division():
@@ -81,6 +90,7 @@ def main():
         eredmeny = input_1 / input_2  
         print(f"\n{Fore.GREEN} Az szamolás eredménye: {eredmeny}{Style.RESET_ALL}")
 
+    #Osztás vége
     #Hatványozás
     
     def exponentiation():
@@ -90,6 +100,7 @@ def main():
         eredmeny = input_1 ** input_1  
         print(f"\n{Fore.GREEN} Az szamolás eredménye: {eredmeny}{Style.RESET_ALL}")
 
+    #Hatványozás vége
     #Gyökvonás
 
     def root_subtraction():
@@ -99,31 +110,36 @@ def main():
         eredmeny = input_1 ** 0.5  
         print(f"\n{Fore.GREEN} Az szamolás eredménye: {eredmeny}{Style.RESET_ALL}")
 
+    #Gyökvonás vége
     #Kerület
 
     def district():       
         input_1 = int(input("\nMilyen alakzatnak szeretnéd a kerületét: (kör, négyzet, téglalap, háromszög) "))
 
         if input_1 == "kör" or "Kör":
-            kor_input = int(input(""))
+            kor_input = input("")
 
         elif input_1 == "négyzet" or "Négyzet":
-            negyzet_input = int(input(""))
+            negyzet_input = input("")
 
         elif input_1 == "téglalap" or "Téglalap":
-            teglalap_input = int(input(""))
+            teglalap_input = input("")
 
         elif input_1 == "haromszög" or "Háromszög":
-            haromszög_input = int(input(""))
+            haromszög_input = input("")
 
         else:
             print(f"\n Ilyen érték nincs megadva")
             district()
 
+    #Kerület vége
     #Terület
 
     def region():
         input_1 = int(input("\nMilyen alakzatnak szeretnéd a területét: (kör, négyzet, téglalap, háromszög)"))
+
+    #Terület vége
+    #Ismétlés függvény
 
     def repait():
         user_continue = input("\nSzeretnéd továbbra is számolni? ( igen / nem ) ")
@@ -137,6 +153,9 @@ def main():
         else:
             print("\nIlyen érték nincs megadva.")
             repait()
+
+    #Ismétlés függvény vége
+    #Ez csak egy nagy szöveg kiiratásának függvénye
  
     def big_text():
         print(f"""{Fore.YELLOW}
@@ -147,6 +166,8 @@ def main():
   \____|\__,_||_||_| \___| \__,_||_| \__,_| \__|\___/ |_|     |_.__/  \__, |(_)|____/  \__,_|/___||___/|_| 
                                                                       |___/                                                                                                     
     {Style.RESET_ALL}Ez egy számológép alkalmazás:""")
+
+    #Ez csak egy nagy szöveg kiiratásának függvénye vége
 
     def choice():
 
@@ -164,6 +185,8 @@ def main():
         (8) Terület 
               
               """)
+
+    #A felhasználótól bekér egy inputut    
 
         global user_choise
         user_choise = input("Választásod? ")  
