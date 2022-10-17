@@ -2,7 +2,6 @@ import time
 import colorama
 from colorama import Fore, Back, Style
 from colorama import init
-from termcolor import colored, cprint
 
 init()
 
@@ -114,23 +113,99 @@ def main():
     #Kerület
 
     def district():       
-        input_1 = int(input("\nMilyen alakzatnak szeretnéd a kerületét: (kör, négyzet, téglalap, háromszög) "))
+        input_ker_1 = input("\nMilyen alakzatnak szeretnéd a kerületét: (kör, négyzet, téglalap, háromszög) ")
 
-        if input_1 == "kör" or "Kör":
-            kor_input = input("")
+        if input_ker_1 == "1":
+            print("alma")
 
-        elif input_1 == "négyzet" or "Négyzet":
-            negyzet_input = input("")
+        elif input_ker_1 == "2":
+            print("b")
 
-        elif input_1 == "téglalap" or "Téglalap":
-            teglalap_input = input("")
+        elif input_ker_1 == "3":
+            print("cigány")
 
-        elif input_1 == "haromszög" or "Háromszög":
-            haromszög_input = input("")
+        elif input_ker_1 == "4" or input_ker_1 == "haromszog" or input_ker_1 == "háromszög":
+            haromszog_ker()
 
         else:
             print(f"\n Ilyen érték nincs megadva")
             district()
+
+
+    #Haromszög kerülete területe
+
+    def haromszog_ker():
+
+        def inputs_ker_haromszog():  
+            global in_kerulet_haromszog_1
+            in_kerulet_haromszog_1 = input("Add meg az első adatot: ")
+            converting_input_ker_1()
+            global in_kerulet_haromszog_2
+            in_kerulet_haromszog_2 = input("Add meg az másidak adatot: ")
+            converting_input_ker_2()
+            global in_kerulet_haromszog_3
+            in_kerulet_haromszog_3 = input("Add meg az harmadik adatot: ")
+            converting_input_ker_3()
+
+        def converting_input_ker_1():
+
+            try:
+                global in_kerulet_haromszog_1
+                in_kerulet_haromszog_1 = int(in_kerulet_haromszog_1)
+
+            except:
+                print(f"\n{Fore.RED}Ezzel az adattal nem lehet számolni!!{Style.RESET_ALL}")
+                inputs_ker_haromszog()
+
+        def converting_input_ker_2():
+
+            try:
+                global in_kerulet_haromszog_2
+                in_kerulet_haromszog_2 = int(in_kerulet_haromszog_2)
+
+            except:
+                print(f"\n{Fore.RED}Ezzel az adattal nem lehet számolni!!{Style.RESET_ALL}")
+                inputs_ker_haromszog()
+
+        def converting_input_ker_3():
+
+            try:
+                global in_kerulet_haromszog_3
+                in_kerulet_haromszog_3 = int(in_kerulet_haromszog_3)
+                haromszogcallc()
+
+            except:
+                print(f"\n{Fore.RED}Ezzel az adattal nem lehet számolni!!{Style.RESET_ALL}")
+                inputs_ker_haromszog()
+
+        def derekszog():
+
+            if (in_kerulet_haromszog_1 ** 2) + (in_kerulet_haromszog_2 ** 2) == (in_kerulet_haromszog_3 ** 2) or (in_kerulet_haromszog_2 ** 2) + (in_kerulet_haromszog_1 ** 2) == (in_kerulet_haromszog_3 ** 2) or (in_kerulet_haromszog_3 ** 2) + (in_kerulet_haromszog_2 ** 2) == (in_kerulet_haromszog_1 ** 2):
+                print(f"\n{Fore.RED}Ez a háromszög derékszögű.{Style.RESET_ALL}")
+
+            else:
+                print(f"\n{Fore.RED}Ez a háromszög nem derékszögű.{Style.RESET_ALL}")
+
+        def haromszogcallc():
+
+            if in_kerulet_haromszog_1 + in_kerulet_haromszog_2 >= in_kerulet_haromszog_3 or in_kerulet_haromszog_2 + in_kerulet_haromszog_1 >= in_kerulet_haromszog_3 or in_kerulet_haromszog_1 + in_kerulet_haromszog_3 >= in_kerulet_haromszog_2 or in_kerulet_haromszog_3 + in_kerulet_haromszog_1 >= in_kerulet_haromszog_2 or in_kerulet_haromszog_3 + in_kerulet_haromszog_1 >= in_kerulet_haromszog_2 or in_kerulet_haromszog_1 + in_kerulet_haromszog_3 >= in_kerulet_haromszog_2:
+                derekszog()
+                print(Fore.GREEN +"\nEz a háromszög szerkezthető" + Style.RESET_ALL)
+                kerület = in_kerulet_haromszog_1 + in_kerulet_haromszog_2 + in_kerulet_haromszog_3
+                print(f"{Fore.GREEN}\nA kerület: {kerület}{Style.RESET_ALL}")
+                s = kerület / 2
+                cal_1 = s * ((s - in_kerulet_haromszog_1) * (s - in_kerulet_haromszog_2) * (s - in_kerulet_haromszog_3))
+                terület = cal_1 ** 0.5
+                print(f"\n{Fore.GREEN}A terület: {terület}{Style.RESET_ALL}")   
+                repait()
+
+            else:
+                print(Fore.RED + "Nem szerkezthető")
+
+        inputs_ker_haromszog()
+
+
+    #Haromszög kerülete területe vége
 
     #Kerület vége
     #Terület
@@ -144,10 +219,10 @@ def main():
     def repait():
         user_continue = input("\nSzeretnéd továbbra is számolni? ( igen / nem ) ")
 
-        if user_continue == "i" or "igen":
+        if user_continue == "igen" or user_continue == "i":
             choice()
 
-        elif user_continue == "n" or "nem":            
+        elif user_continue == "nem" or user_continue == "n":            
             kilepes()
 
         else:
@@ -219,7 +294,7 @@ def main():
             repait() 
 
         elif user_choise == "7":
-            district() 
+            district()
             repait()
 
         elif user_choise == "8":
@@ -232,6 +307,5 @@ def main():
 
     big_text()
     choice()
-    repait()
 
 main()
