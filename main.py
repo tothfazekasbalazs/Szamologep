@@ -118,11 +118,11 @@ def main():
         if input_ker_1 == "1":
             print("alma")
 
-        elif input_ker_1 == "2":
-            print("b")
+        elif input_ker_1 == "2" or input_1 == "négyzet" or input_1 == "negyzet":
+            negyzet_ker()
 
-        elif input_ker_1 == "3":
-            print("cigány")
+        elif input_ker_1 == "3" or input_ker_1 == "teglalap" or input_ker_1 == "téglalap":
+            teglalap_ker()
 
         elif input_ker_1 == "4" or input_ker_1 == "haromszog" or input_ker_1 == "háromszög":
             haromszog_ker()
@@ -131,7 +131,79 @@ def main():
             print(f"\n Ilyen érték nincs megadva")
             district()
 
+    #Négyzet kerülete területe
 
+    def negyzet_ker():
+
+        def inputs_ker_negyzet():
+            global in_kerulet_negyzet_1
+            in_kerulet_negyzet_1 = input("\nAdd meg a négyzet oldalát: ")
+            converting_input_negyzet_1()
+
+        def converting_input_negyzet_1():
+
+            try:
+                global in_kerulet_negyzet_1
+                in_kerulet_negyzet_1 = int(in_kerulet_negyzet_1)
+                negyzetcallc()
+
+            except:
+                print(f"\n{Fore.RED}Ezzel az adattal nem lehet számolni!!{Style.RESET_ALL}")
+                inputs_ker_negyzet()
+
+        def negyzetcallc():
+            kerülete_negyzet = 4 * in_kerulet_negyzet_1
+            területe_negyzet = in_kerulet_negyzet_1 * in_kerulet_negyzet_1
+            print(f"{Fore.GREEN}\nA kerület: {kerülete_negyzet}{Style.RESET_ALL}")
+            print(f"\n{Fore.GREEN}A terület: {területe_negyzet}{Style.RESET_ALL}")
+
+        inputs_ker_negyzet()
+
+    #Négyzet kerülete területe vége
+    #Téglalap kerülete területe
+
+    def teglalap_ker():
+
+        def inputs_ker_teglalap():
+            global in_kerulet_teglalap_1
+            in_kerulet_teglalap_1 = input("\nAdd meg az eggyik oldalt: ")
+            converting_input_teglalap_1()
+            global in_kerulet_teglalap_2
+            in_kerulet_teglalap_2 = input("\nAdd meg az másis oldalt: ")
+            converting_input_teglalap_2()
+
+        def converting_input_teglalap_1():
+
+            try:
+                global in_kerulet_teglalap_1
+                in_kerulet_teglalap_1 = int(in_kerulet_teglalap_1)
+
+            except:
+                print(f"\n{Fore.RED}Ezzel az adattal nem lehet számolni!!{Style.RESET_ALL}")
+                inputs_ker_teglalap()
+
+        def converting_input_teglalap_2():
+
+            try:
+                global in_kerulet_teglalap_2
+                in_kerulet_teglalap_2 = int(in_kerulet_teglalap_2)
+                teglalapcallc()
+
+            except:
+                print(f"\n{Fore.RED}Ezzel az adattal nem lehet számolni!!{Style.RESET_ALL}")
+                inputs_ker_teglalap()
+
+        def teglalapcallc():
+            kerülete_teglalap = in_kerulet_teglalap_1 + in_kerulet_teglalap_2
+            területe_teglalap = in_kerulet_teglalap_1 * in_kerulet_teglalap_2
+            print(f"{Fore.GREEN}\nA kerület: {kerülete_teglalap}{Style.RESET_ALL}")
+            print(f"\n{Fore.GREEN}A terület: {területe_teglalap}{Style.RESET_ALL}") 
+            repait()
+
+
+        inputs_ker_teglalap()
+
+    #Téglalap kerülete területe vége
     #Haromszög kerülete területe
 
     def haromszog_ker():
@@ -191,12 +263,12 @@ def main():
             if in_kerulet_haromszog_1 + in_kerulet_haromszog_2 >= in_kerulet_haromszog_3 or in_kerulet_haromszog_2 + in_kerulet_haromszog_1 >= in_kerulet_haromszog_3 or in_kerulet_haromszog_1 + in_kerulet_haromszog_3 >= in_kerulet_haromszog_2 or in_kerulet_haromszog_3 + in_kerulet_haromszog_1 >= in_kerulet_haromszog_2 or in_kerulet_haromszog_3 + in_kerulet_haromszog_1 >= in_kerulet_haromszog_2 or in_kerulet_haromszog_1 + in_kerulet_haromszog_3 >= in_kerulet_haromszog_2:
                 derekszog()
                 print(Fore.GREEN +"\nEz a háromszög szerkezthető" + Style.RESET_ALL)
-                kerület = in_kerulet_haromszog_1 + in_kerulet_haromszog_2 + in_kerulet_haromszog_3
-                print(f"{Fore.GREEN}\nA kerület: {kerület}{Style.RESET_ALL}")
-                s = kerület / 2
+                kerülete_haromszog = in_kerulet_haromszog_1 + in_kerulet_haromszog_2 + in_kerulet_haromszog_3
+                print(f"{Fore.GREEN}\nA kerület: {kerülete_haromszog}{Style.RESET_ALL}")
+                s = kerülete_haromszog / 2
                 cal_1 = s * ((s - in_kerulet_haromszog_1) * (s - in_kerulet_haromszog_2) * (s - in_kerulet_haromszog_3))
-                terület = cal_1 ** 0.5
-                print(f"\n{Fore.GREEN}A terület: {terület}{Style.RESET_ALL}")   
+                területe_haromszog = cal_1 ** 0.5
+                print(f"\n{Fore.GREEN}A terület: {területe_haromszog}{Style.RESET_ALL}")   
                 repait()
 
             else:
