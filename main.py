@@ -115,8 +115,8 @@ def main():
     def district():       
         input_ker_1 = input("\nMilyen alakzatnak szeretnéd a kerületét: (kör, négyzet, téglalap, háromszög) ")
 
-        if input_ker_1 == "1":
-            print("alma")
+        if input_ker_1 == "1" or input_ker_1 == "kor" or input_ker_1 == "kör":
+            kor_ker()
 
         elif input_ker_1 == "2" or input_1 == "négyzet" or input_1 == "negyzet":
             negyzet_ker()
@@ -132,9 +132,36 @@ def main():
             district()
 
 
-    #Kör kerülete ke
-    #Négyzet kerülete területe
+    #Kör kerülete területe
 
+    def kor_ker():
+
+        def inputs_ker_kor():
+            global in_kerulet_kor_1
+            in_kerulet_kor_1 = input("\nAdd meg a kör sugarát: ")
+            converting_input_kor_1()
+
+        def converting_input_kor_1():
+
+            try:
+                global in_kerulet_kor_1
+                in_kerulet_kor_1 = int(in_kerulet_kor_1)
+                korcallc()
+
+            except:
+                print(f"\n{Fore.RED}Ezzel az adattal nem lehet számolni!!{Style.RESET_ALL}")
+                inputs_ker_kor()
+        
+        def korcallc():
+            kerülete_kor = (in_kerulet_kor_1 * 2) * 3.14
+            területe_kor = (in_kerulet_kor_1 ** 2) * 3.14
+            print(f"{Fore.GREEN}\nA kerület: {kerülete_kor}{Style.RESET_ALL}")
+            print(f"\n{Fore.GREEN}A terület: {területe_kor}{Style.RESET_ALL}")
+
+        inputs_ker_kor()
+
+    #Kör kerülete területe vége
+    #Négyzet kerülete területe
     def negyzet_ker():
 
         def inputs_ker_negyzet():
