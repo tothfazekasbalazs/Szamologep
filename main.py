@@ -315,6 +315,18 @@ def main():
         input_1 = int(input("\nMilyen alakzatnak szeretnéd a területét: (kör, négyzet, téglalap, háromszög)"))
 
     #Terület vége
+    #Sugó
+
+    def sugo():
+        print("""
+        
+        
+
+
+
+        """)
+
+    #Sugó vége
     #Ismétlés függvény
 
     def repait():
@@ -359,6 +371,7 @@ def main():
         (6) Négyzet gyökvonás
         (7) Kerület
         (8) Terület 
+        (9) Súgó
               
               """)
 
@@ -401,6 +414,10 @@ def main():
         elif user_choise == "8":
             region()
             repait()                          
+
+        elif user_choise == "9":
+            sugo()
+            repait()
 
         else:
             print("\nIlyer érték nincs felsorolva")  
